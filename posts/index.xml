@@ -6,10 +6,33 @@
     <description>Recent content in Posts on 从入门到秃头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 19 Aug 2019 19:00:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 14:20:26 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用Hugo搭建个人博客</title>
+      <link>http://example.org/posts/how-to-build-hugo/</link>
+      <pubDate>Wed, 23 Oct 2019 14:20:26 +0800</pubDate>
+      
+      <guid>http://example.org/posts/how-to-build-hugo/</guid>
+      <description>1.从Hugo官网的Install页面下载相应系统的安装文件
+ 因为自己是windows7，所以使用hugo_0.57.2_Windows-64bit.zip解压后得到exe文件 然后将exe文件所在的目录加入环境变量
+ 2.验证是否安装成功
+ 在命令行中执行hugo version，安装成功会输出版本信息
+我的是Hugo Static Site Generator v0.57.2-A849CB2D windows/amd64 BuildDate: 2019-08-17T17:54:13Z
+ 3.创建站点
+ 输入hugo new site myblog就会得到一个myblog的目录
+ 4.添加文章
+ 进入myblog目录，输入hugo new posts/first-post.md就会在content/posts下生成first-post.md文件， 就可以在这里面使用md语法写blog。
+记得在最终要发布的时候将draft:true改成false，draft是草稿的意思
+ 5.预览文章
+ 输入hugo server -D，然后根据提示打开http://localhost:1313/就可以看到文章效果
+ 6.生成静态页面
+ 输入hugo就会在public目录下生成静态页面文件 此时可以将public单独设置一个仓库关联github然后就可以将博客上传到github page
+ </description>
+    </item>
     
     <item>
       <title>Test</title>
