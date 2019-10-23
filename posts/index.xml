@@ -6,10 +6,27 @@
     <description>Recent content in Posts on 从入门到秃头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 23 Oct 2019 14:20:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 15:59:12 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML入门笔记1</title>
+      <link>http://example.org/posts/html-first/</link>
+      <pubDate>Wed, 23 Oct 2019 15:59:12 +0800</pubDate>
+      
+      <guid>http://example.org/posts/html-first/</guid>
+      <description>历史  HTML的英文全称是 Hypertext Marked Language，即超文本标记语言。HTML是由Web的发明者 Tim Berners-Lee(李爵士)和同事 Daniel W. Connolly于1990年创立的一种标记语言——百度百科
+ HTML起手式 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;zh-CN&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0&amp;quot; /&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatiable&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;我的网页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  常用的表示章节的标签  h1~h6 表示标题，h1字体最大，依次减少
+ section 表示章节
+ article 表示文章
+ header 放在顶部的结构，比如顶部广告
+ footer 放在底部的结构，比如版权声明
+ main 主要内容
+ aside 旁支内容
+  示例 &amp;lt;header&amp;gt;顶部广告&amp;lt;/header&amp;gt; &amp;lt;div&amp;gt; &amp;lt;main&amp;gt; &amp;lt;h1&amp;gt;文章标题&amp;lt;/h1&amp;gt; &amp;lt;section&amp;gt; &amp;lt;h2&amp;gt;第一章&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;内容&amp;lt;/p&amp;gt; &amp;lt;setion&amp;gt; &amp;lt;h3&amp;gt;1.1节&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt;一段话&amp;lt;/p&amp;gt; &amp;lt;/setion&amp;gt; &amp;lt;setion&amp;gt; &amp;lt;h3&amp;gt;1.</description>
+    </item>
     
     <item>
       <title>使用Hugo搭建个人博客</title>
@@ -32,16 +49,6 @@
  6.生成静态页面
  输入hugo就会在public目录下生成静态页面文件 此时可以将public单独设置一个仓库关联github然后就可以将博客上传到github page
  </description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>http://example.org/posts/test/</link>
-      <pubDate>Mon, 19 Aug 2019 19:00:29 +0800</pubDate>
-      
-      <guid>http://example.org/posts/test/</guid>
-      <description>#hello world
-test hugo</description>
     </item>
     
   </channel>
