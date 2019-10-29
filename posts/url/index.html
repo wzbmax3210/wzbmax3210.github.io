@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>从入门到秃头  | 浅析URL</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="浅析URL" />
+<meta property="og:description" content=" 完整的URL包括以下内容
+协议 &#43; 域名或IP &#43; 端口号 &#43; 路径 &#43; 查询字符串 &#43; 锚点
+例如:https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5
+协议(protocol) 协议一般指网络数据交换规则，诸如HTTP(超文本传输协议)，FTP(文件传输协议)等
+IP(Internet Protocol) 简单来说IP主要约定了两件事1:如何定位一台设备。2:如何封装数据报文并与其他设备交流
+ 几个特殊的ip:127.0.0.1表示自己，localhost通过hosts指定为自己，0.0.0.0不表示任何设备
+ 端口号(port) IP可以定位一台机器，而一台机器可以通过端口号提供不同的服务，如 - HTTP服务一般是80 - HTTPS服务一般是443 - FTP服务一般是21 - 一共有65535个端口
+路径 由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。
+查询字符串 可选，用于给动态网页传递参数，多个参数用&amp;隔开
+锚点 可以定位到网页的某个地方
+域名 域名通过DNS(域名系统)解析到公网地址，也就是域名其实就是IP的别称。
+ 一个域名可以对应多个IP，这叫负载均衡，防止一台机器压力过大
+一个IP可以对应多个域名，这叫共享主机
+ 当你输入域名在浏览器确认时，浏览器会向DNS服务器请求对应的IP，然后返回一个IP请求到相应的机器返回相应的网页内容
+ 就www.baidu.com来说，com是顶级域名，baidu.com是二级域名，www.baidu.com是三级域名
+ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/url/" />
+<meta property="article:published_time" content="2019-10-29T14:22:02+08:00" />
+<meta property="article:modified_time" content="2019-10-29T14:22:02+08:00" />
+<meta itemprop="name" content="浅析URL">
+<meta itemprop="description" content=" 完整的URL包括以下内容
+协议 &#43; 域名或IP &#43; 端口号 &#43; 路径 &#43; 查询字符串 &#43; 锚点
+例如:https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5
+协议(protocol) 协议一般指网络数据交换规则，诸如HTTP(超文本传输协议)，FTP(文件传输协议)等
+IP(Internet Protocol) 简单来说IP主要约定了两件事1:如何定位一台设备。2:如何封装数据报文并与其他设备交流
+ 几个特殊的ip:127.0.0.1表示自己，localhost通过hosts指定为自己，0.0.0.0不表示任何设备
+ 端口号(port) IP可以定位一台机器，而一台机器可以通过端口号提供不同的服务，如 - HTTP服务一般是80 - HTTPS服务一般是443 - FTP服务一般是21 - 一共有65535个端口
+路径 由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。
+查询字符串 可选，用于给动态网页传递参数，多个参数用&amp;隔开
+锚点 可以定位到网页的某个地方
+域名 域名通过DNS(域名系统)解析到公网地址，也就是域名其实就是IP的别称。
+ 一个域名可以对应多个IP，这叫负载均衡，防止一台机器压力过大
+一个IP可以对应多个域名，这叫共享主机
+ 当你输入域名在浏览器确认时，浏览器会向DNS服务器请求对应的IP，然后返回一个IP请求到相应的机器返回相应的网页内容
+ 就www.baidu.com来说，com是顶级域名，baidu.com是二级域名，www.baidu.com是三级域名
+ ">
+
+
+<meta itemprop="datePublished" content="2019-10-29T14:22:02&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-29T14:22:02&#43;08:00" />
+<meta itemprop="wordCount" content="41">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析URL"/>
+<meta name="twitter:description" content=" 完整的URL包括以下内容
+协议 &#43; 域名或IP &#43; 端口号 &#43; 路径 &#43; 查询字符串 &#43; 锚点
+例如:https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5
+协议(protocol) 协议一般指网络数据交换规则，诸如HTTP(超文本传输协议)，FTP(文件传输协议)等
+IP(Internet Protocol) 简单来说IP主要约定了两件事1:如何定位一台设备。2:如何封装数据报文并与其他设备交流
+ 几个特殊的ip:127.0.0.1表示自己，localhost通过hosts指定为自己，0.0.0.0不表示任何设备
+ 端口号(port) IP可以定位一台机器，而一台机器可以通过端口号提供不同的服务，如 - HTTP服务一般是80 - HTTPS服务一般是443 - FTP服务一般是21 - 一共有65535个端口
+路径 由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。
+查询字符串 可选，用于给动态网页传递参数，多个参数用&amp;隔开
+锚点 可以定位到网页的某个地方
+域名 域名通过DNS(域名系统)解析到公网地址，也就是域名其实就是IP的别称。
+ 一个域名可以对应多个IP，这叫负载均衡，防止一台机器压力过大
+一个IP可以对应多个域名，这叫共享主机
+ 当你输入域名在浏览器确认时，浏览器会向DNS服务器请求对应的IP，然后返回一个IP请求到相应的机器返回相应的网页内容
+ 就www.baidu.com来说，com是顶级域名，baidu.com是二级域名，www.baidu.com是三级域名
+ "/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      从入门到秃头
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">浅析URL</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-10-29T14:22:02&#43;08:00">October 29, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>完整的URL包括以下内容</p>
+
+<p>协议 + 域名或IP + 端口号 + 路径 + 查询字符串 + 锚点</p>
+
+<p>例如:<a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5</a></p>
+
+<h3 id="协议-protocol">协议(protocol)</h3>
+
+<p>协议一般指网络数据交换规则，诸如HTTP(超文本传输协议)，FTP(文件传输协议)等</p>
+
+<h3 id="ip-internet-protocol">IP(Internet Protocol)</h3>
+
+<p>简单来说IP主要约定了两件事1:如何定位一台设备。2:如何封装数据报文并与其他设备交流</p>
+
+<blockquote>
+<p>几个特殊的ip:127.0.0.1表示自己，localhost通过hosts指定为自己，0.0.0.0不表示任何设备</p>
+</blockquote>
+
+<h3 id="端口号-port">端口号(port)</h3>
+
+<p>IP可以定位一台机器，而一台机器可以通过端口号提供不同的服务，如
+- HTTP服务一般是80
+- HTTPS服务一般是443
+- FTP服务一般是21
+- 一共有65535个端口</p>
+
+<h3 id="路径">路径</h3>
+
+<p>由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。</p>
+
+<h3 id="查询字符串">查询字符串</h3>
+
+<p>可选，用于给动态网页传递参数，多个参数用&amp;隔开</p>
+
+<h3 id="锚点">锚点</h3>
+
+<p>可以定位到网页的某个地方</p>
+
+<h3 id="域名">域名</h3>
+
+<p>域名通过DNS(域名系统)解析到公网地址，也就是域名其实就是IP的别称。</p>
+
+<blockquote>
+<p>一个域名可以对应多个IP，这叫负载均衡，防止一台机器压力过大</p>
+
+<p>一个IP可以对应多个域名，这叫共享主机</p>
+</blockquote>
+
+<p>当你输入域名在浏览器确认时，浏览器会向DNS服务器请求对应的IP，然后返回一个IP请求到相应的机器返回相应的网页内容</p>
+
+<blockquote>
+<p>就www.baidu.com来说，com是顶级域名，baidu.com是二级域名，www.baidu.com是三级域名</p>
+</blockquote>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 从入门到秃头
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
