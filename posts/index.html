@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/posts/" />
 
-<meta property="og:updated_time" content="2019-10-29T15:39:33+08:00" />
+<meta property="og:updated_time" content="2019-11-14T09:13:14+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -89,6 +89,28 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/js-object/" class="link black dim">
+        Js Object
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      声明对象的两种用法 1.简写写法
+let obj = {a: 1}  2.正式写法
+let obj = new Object({a: 1})  如何删除对象的属性 delete obj.xxx delete obj['xxx']   将属性值设为undefined并不等同于删除属性
+用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
+ 如何查看对象的属性  查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
+ 查看自身+公有属性（prototype）用console.dir(obj)
+  如何修改或增加对象的属性  直接赋值
+let obj = {name: 'abc'} obj.name = 'xxx' // name是字符串 obj['name'] = 'xxx' //name是字符串 obj['na' + 'me'] = 'xxx' let key = 'name' obj[key] = 'xxx' //使用变量属性时要用中括号的写法  批量赋值 使用Object.assign(obj, {a: 1, b: 2})
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">

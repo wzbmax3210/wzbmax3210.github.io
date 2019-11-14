@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/" />
 
-<meta property="og:updated_time" content="2019-10-29T15:39:33+08:00" />
+<meta property="og:updated_time" content="2019-11-14T09:13:14+08:00" />
 <meta itemprop="name" content="从入门到秃头">
 <meta itemprop="description" content="">
 
@@ -120,6 +120,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/js-object/" class="color-inherit dim link">
+            Js Object
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          声明对象的两种用法 1.简写写法
+let obj = {a: 1}  2.正式写法
+let obj = new Object({a: 1})  如何删除对象的属性 delete obj.xxx delete obj['xxx']   将属性值设为undefined并不等同于删除属性
+用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
+ 如何查看对象的属性  查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
+ 查看自身+公有属性（prototype）用console.dir(obj)
+  如何修改或增加对象的属性  直接赋值
+let obj = {name: 'abc'} obj.name = 'xxx' // name是字符串 obj['name'] = 'xxx' //name是字符串 obj['na' + 'me'] = 'xxx' let key = 'name' obj[key] = 'xxx' //使用变量属性时要用中括号的写法  批量赋值 使用Object.assign(obj, {a: 1, b: 2})
+        </div>
+          <a href="/posts/js-object/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/js-syntax/" class="color-inherit dim link">
             JS语法
             </a>
@@ -172,51 +203,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/url/" class="color-inherit dim link">
-            浅析URL
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-           完整的URL包括以下内容
-协议 + 域名或IP + 端口号 + 路径 + 查询字符串 + 锚点
-例如:https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5
-协议(protocol) 协议一般指网络数据交换规则，诸如HTTP(超文本传输协议)，FTP(文件传输协议)等
-IP(Internet Protocol) 简单来说IP主要约定了两件事1:如何定位一台设备。2:如何封装数据报文并与其他设备交流
- 几个特殊的ip:127.0.0.1表示自己，localhost通过hosts指定为自己，0.0.0.0不表示任何设备
- 端口号(port) IP可以定位一台机器，而一台机器可以通过端口号提供不同的服务，如 - HTTP服务一般是80 - HTTPS服务一般是443 - FTP服务一般是21 - 一共有65535个端口
-路径 由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。
-查询字符串 可选，用于给动态网页传递参数，多个参数用&amp;隔开
-锚点 可以定位到网页的某个地方
-域名 域名通过DNS(域名系统)解析到公网地址，也就是域名其实就是IP的别称。
- 一个域名可以对应多个IP，这叫负载均衡，防止一台机器压力过大
-一个IP可以对应多个域名，这叫共享主机
- 当你输入域名在浏览器确认时，浏览器会向DNS服务器请求对应的IP，然后返回一个IP请求到相应的机器返回相应的网页内容
- 就www.baidu.com来说，com是顶级域名，baidu.com是二级域名，www.baidu.com是三级域名
- 
-        </div>
-          <a href="/posts/url/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/url/" class="link black dim">
+              浅析URL
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/css-animation/" class="link black dim">
@@ -233,12 +231,6 @@ IP(Internet Protocol) 简单来说IP主要约定了两件事1:如何定位一台
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/html-first/" class="link black dim">
               HTML入门笔记1
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/how-to-build-hugo/" class="link black dim">
-              使用Hugo搭建个人博客
             </a>
           </h2>
         

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>从入门到秃头  | Js Object</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Js Object" />
+<meta property="og:description" content="声明对象的两种用法 1.简写写法
+let obj = {a: 1}  2.正式写法
+let obj = new Object({a: 1})  如何删除对象的属性 delete obj.xxx delete obj[&#39;xxx&#39;]   将属性值设为undefined并不等同于删除属性
+用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
+ 如何查看对象的属性  查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
+ 查看自身&#43;公有属性（prototype）用console.dir(obj)
+  如何修改或增加对象的属性  直接赋值
+let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj[&#39;name&#39;] = &#39;xxx&#39; //name是字符串 obj[&#39;na&#39; &#43; &#39;me&#39;] = &#39;xxx&#39; let key = &#39;name&#39; obj[key] = &#39;xxx&#39; //使用变量属性时要用中括号的写法  批量赋值 使用Object.assign(obj, {a: 1, b: 2})" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/js-object/" />
+<meta property="article:published_time" content="2019-11-14T09:13:14+08:00" />
+<meta property="article:modified_time" content="2019-11-14T09:13:14+08:00" />
+<meta itemprop="name" content="Js Object">
+<meta itemprop="description" content="声明对象的两种用法 1.简写写法
+let obj = {a: 1}  2.正式写法
+let obj = new Object({a: 1})  如何删除对象的属性 delete obj.xxx delete obj[&#39;xxx&#39;]   将属性值设为undefined并不等同于删除属性
+用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
+ 如何查看对象的属性  查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
+ 查看自身&#43;公有属性（prototype）用console.dir(obj)
+  如何修改或增加对象的属性  直接赋值
+let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj[&#39;name&#39;] = &#39;xxx&#39; //name是字符串 obj[&#39;na&#39; &#43; &#39;me&#39;] = &#39;xxx&#39; let key = &#39;name&#39; obj[key] = &#39;xxx&#39; //使用变量属性时要用中括号的写法  批量赋值 使用Object.assign(obj, {a: 1, b: 2})">
+
+
+<meta itemprop="datePublished" content="2019-11-14T09:13:14&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-14T09:13:14&#43;08:00" />
+<meta itemprop="wordCount" content="62">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Object"/>
+<meta name="twitter:description" content="声明对象的两种用法 1.简写写法
+let obj = {a: 1}  2.正式写法
+let obj = new Object({a: 1})  如何删除对象的属性 delete obj.xxx delete obj[&#39;xxx&#39;]   将属性值设为undefined并不等同于删除属性
+用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
+ 如何查看对象的属性  查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
+ 查看自身&#43;公有属性（prototype）用console.dir(obj)
+  如何修改或增加对象的属性  直接赋值
+let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj[&#39;name&#39;] = &#39;xxx&#39; //name是字符串 obj[&#39;na&#39; &#43; &#39;me&#39;] = &#39;xxx&#39; let key = &#39;name&#39; obj[key] = &#39;xxx&#39; //使用变量属性时要用中括号的写法  批量赋值 使用Object.assign(obj, {a: 1, b: 2})"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      从入门到秃头
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Js Object</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-14T09:13:14&#43;08:00">November 14, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h3 id="声明对象的两种用法">声明对象的两种用法</h3>
+
+<p>1.简写写法</p>
+
+<pre><code class="language-javascript">let obj = {a: 1}
+</code></pre>
+
+<p>2.正式写法</p>
+
+<pre><code class="language-javascript">let obj = new Object({a: 1})
+</code></pre>
+
+<h3 id="如何删除对象的属性">如何删除对象的属性</h3>
+
+<pre><code class="language-javascript">delete obj.xxx
+delete obj['xxx']
+</code></pre>
+
+<blockquote>
+<p>将属性值设为undefined并不等同于删除属性</p>
+
+<p>用<code>xxx in obj</code>来判断obj是否含xxx属性，包括原形属性
+也可以用<code>obj.hasOwnProperty</code>来判断，只判断非原型属性</p>
+</blockquote>
+
+<h3 id="如何查看对象的属性">如何查看对象的属性</h3>
+
+<ol>
+<li><p>查看自身所有的属性用<code>Object.keys(obj)</code>，它将返回对象自身属性名的数组</p></li>
+
+<li><p>查看自身+公有属性（prototype）用<code>console.dir(obj)</code></p></li>
+</ol>
+
+<h3 id="如何修改或增加对象的属性">如何修改或增加对象的属性</h3>
+
+<ol>
+<li><p>直接赋值</p>
+
+<pre><code class="language-javascript">let obj = {name: 'abc'}
+obj.name = 'xxx' // name是字符串
+obj['name'] = 'xxx' //name是字符串
+obj['na' + 'me'] = 'xxx'
+
+let key = 'name'
+obj[key] = 'xxx' //使用变量属性时要用中括号的写法
+</code></pre></li>
+
+<li><p>批量赋值
+使用<code>Object.assign(obj, {a: 1, b: 2})</code></p></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 从入门到秃头
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

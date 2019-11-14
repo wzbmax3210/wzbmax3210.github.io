@@ -6,10 +6,26 @@
     <description>Recent content in Posts on 从入门到秃头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 29 Oct 2019 15:39:33 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 09:13:14 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Js Object</title>
+      <link>http://example.org/posts/js-object/</link>
+      <pubDate>Thu, 14 Nov 2019 09:13:14 +0800</pubDate>
+      
+      <guid>http://example.org/posts/js-object/</guid>
+      <description>声明对象的两种用法 1.简写写法
+let obj = {a: 1}  2.正式写法
+let obj = new Object({a: 1})  如何删除对象的属性 delete obj.xxx delete obj[&#39;xxx&#39;]   将属性值设为undefined并不等同于删除属性
+用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
+ 如何查看对象的属性  查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
+ 查看自身+公有属性（prototype）用console.dir(obj)
+  如何修改或增加对象的属性  直接赋值
+let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj[&#39;name&#39;] = &#39;xxx&#39; //name是字符串 obj[&#39;na&#39; + &#39;me&#39;] = &#39;xxx&#39; let key = &#39;name&#39; obj[key] = &#39;xxx&#39; //使用变量属性时要用中括号的写法  批量赋值 使用Object.assign(obj, {a: 1, b: 2})</description>
+    </item>
     
     <item>
       <title>JS语法</title>
