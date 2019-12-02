@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/" />
 
-<meta property="og:updated_time" content="2019-11-14T09:13:14+08:00" />
+<meta property="og:updated_time" content="2019-12-02T14:12:31+08:00" />
 <meta itemprop="name" content="从入门到秃头">
 <meta itemprop="description" content="">
 
@@ -120,6 +120,38 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/js-function/" class="color-inherit dim link">
+            JS 函数的执行时机
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }   以上代码的执行结果是什么？
+答案是6个6，而不是直觉上的0,1,2,3,4,5
+ 由于JavaScript是单线程，settimeout属异步任务，要在同步任务执行完后才去执行，所以先执行for循环
+而执行完以后i已经变成6，所以在最后执行settimeout时会答应6个6
+在ES6中如果我们写成
+for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }  则会打印出0,1,2,3,4,5
+因为在let i = 0初始化写入for循环时，JavaScript会在每次循环时多创建一个临时的i，属于特别处理
+我们还可以写成这样
+let i = 0 for(i = 0; i&lt;6; i++){ (function(i) { setTimeout(()=&gt;{ console.log(i) },0) })(i) }  同样打印0,1,2,3,4,5 这里为每个回调函数构建单独的闭包作用域，这样返回的六个函数都有自己的独立闭包环境
+        </div>
+          <a href="/posts/js-function/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/js-object/" class="color-inherit dim link">
             JS 对象基本用法
             </a>
@@ -172,43 +204,18 @@ let obj = {name: 'abc'} obj.name = 'xxx' // name是字符串 obj['name'] = 'xxx'
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/js-view/" class="color-inherit dim link">
-            Js概览
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          JavaScript是布兰登·艾奇(Brendan Eich)于1995年在网景公司的要求下开发的。
-起初，他对开发JavaScript没有什么兴趣，只是为了完成任务花了十天就完成了。
-他的设计思路主要是:
- 借鉴了C语言基本语法 借鉴Java语言的数据类型和内存管理 借鉴Scheme语言，将函数提升到&rdquo;第一等公民&rdquo;(first class)的地位 借鉴Self语言，使用基于原型(prototype)的继承机制  所以JavaScript说好听是集大成，说不好听其实是东拼西凑的语言。而其本人也并不喜欢自己的这个作品。
-后来由于种种原因，JavaScript成了浏览器的统一脚本语言，并且业界制定了ECMAScript标准。
-到今天由于chrome有大一统pc端浏览器的趋势，同时移动端市场的快速发展，加上ECMAScript新标准的发布，
-前端这个岗位需求量越来越大，造就了现在JavaScript很火。
-所以，语言的流行不在于它是否有多完美，而是是否能在风口上。所以即使JavaScript如此多缺陷，但是它仍是最流行的语言之一。
-        </div>
-          <a href="/posts/js-view/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/js-view/" class="link black dim">
+              Js概览
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/url/" class="link black dim">
@@ -225,12 +232,6 @@ let obj = {name: 'abc'} obj.name = 'xxx' // name是字符串 obj['name'] = 'xxx'
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/html-tag/" class="link black dim">
               HTML常用标签
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/html-first/" class="link black dim">
-              HTML入门笔记1
             </a>
           </h2>
         
