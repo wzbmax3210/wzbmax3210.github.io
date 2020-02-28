@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 从入门到秃头</title>
@@ -6,10 +6,24 @@
     <description>Recent content in Posts on 从入门到秃头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 02 Dec 2019 14:12:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 20:39:52 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jQuery对象基本用法</title>
+      <link>http://example.org/posts/jquery/</link>
+      <pubDate>Fri, 28 Feb 2020 20:39:52 +0800</pubDate>
+      
+      <guid>http://example.org/posts/jquery/</guid>
+      <description>jQuery 如何获取元素 将一个选择表达式放进构造函数jQuery()中(简写为$())，得到被选中的元素
+$(document) //选择整个document对象 $(&amp;#39;#test&amp;#39;) //选择id为test的元素 $(&amp;#39;.cls&amp;#39;) //选择class为cls的元素 jQuery 的链式操作是怎样的 由于操作dom对象只需要呈现网页上的结果，不需要获得什么返回值 所以jQuery将dom操作返回jQuery对象，这样就可以实现类似如下的链式操作
+$(&amp;#39;#test&amp;#39;).find(&amp;#39;.children&amp;#39;).addClass(&amp;#39;mark&amp;#39;) jQuery 如何创建元素 只需要将html元素写法的字符串传入jQuery对象即可
+$(&amp;#39;&amp;lt;div class=&amp;#34;div1&amp;#34;&amp;gt;this is a div&amp;lt;/div&amp;gt;&amp;#39;) $(&amp;#39;ul&amp;#39;).append(&amp;#39;&amp;lt;li&amp;gt;item&amp;lt;/li&amp;gt;&amp;#39;) jQuery 如何移动元素 .insertAfter()和.after()：在现存元素的外部，从后面插入元素 .insertBefore()和.before()：在现存元素的外部，从前面插入元素 .appendTo()和.append()：在现存元素的内部，从后面插入元素 .prependTo()和.prepend()：在现存元素的内部，从前面插入元素 会返回被操作的元素，例如
+$(&amp;#39;div&amp;#39;).after($(&amp;#39;p&amp;#39;)) //返回div元素 $(&amp;#39;p&amp;#39;).after($(&amp;#39;div&amp;#39;)) //返回p元素 jQuery 如何修改元素的属性 常见的如
+.html() 取出或设置html内容 .text() 取出或设置text内容 .attr() 取出或设置某个属性的值 .width() 取出或设置某个元素的宽度 .height() 取出或设置某个元素的高度 .val() 取出某个表单元素的值 </description>
+    </item>
     
     <item>
       <title>JS 函数的执行时机</title>
@@ -17,15 +31,15 @@
       <pubDate>Mon, 02 Dec 2019 14:12:31 +0800</pubDate>
       
       <guid>http://example.org/posts/js-function/</guid>
-      <description>let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }   以上代码的执行结果是什么？
+      <description>let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }  以上代码的执行结果是什么？
 答案是6个6，而不是直觉上的0,1,2,3,4,5
  由于JavaScript是单线程，settimeout属异步任务，要在同步任务执行完后才去执行，所以先执行for循环
 而执行完以后i已经变成6，所以在最后执行settimeout时会答应6个6
 在ES6中如果我们写成
-for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }  则会打印出0,1,2,3,4,5
+for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) } 则会打印出0,1,2,3,4,5
 因为在let i = 0初始化写入for循环时，JavaScript会在每次循环时多创建一个临时的i，属于特别处理
 我们还可以写成这样
-let i = 0 for(i = 0; i&amp;lt;6; i++){ (function(i) { setTimeout(()=&amp;gt;{ console.log(i) },0) })(i) }  同样打印0,1,2,3,4,5 这里为每个回调函数构建单独的闭包作用域，这样返回的六个函数都有自己的独立闭包环境</description>
+let i = 0 for(i = 0; i&amp;lt;6; i++){ (function(i) { setTimeout(()=&amp;gt;{ console.log(i) },0) })(i) } 同样打印0,1,2,3,4,5 这里为每个回调函数构建单独的闭包作用域，这样返回的六个函数都有自己的独立闭包环境</description>
     </item>
     
     <item>
@@ -35,13 +49,12 @@ let i = 0 for(i = 0; i&amp;lt;6; i++){ (function(i) { setTimeout(()=&amp;gt;{ co
       
       <guid>http://example.org/posts/js-object/</guid>
       <description>声明对象的两种用法 1.简写写法
-let obj = {a: 1}  2.正式写法
-let obj = new Object({a: 1})  如何删除对象的属性 delete obj.xxx delete obj[&#39;xxx&#39;]   将属性值设为undefined并不等同于删除属性
+let obj = {a: 1} 2.正式写法
+let obj = new Object({a: 1}) 如何删除对象的属性 delete obj.xxx delete obj[&amp;#39;xxx&amp;#39;]  将属性值设为undefined并不等同于删除属性
 用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
- 如何查看对象的属性  查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
- 查看自身+公有属性（prototype）用console.dir(obj)
-  如何修改或增加对象的属性  直接赋值
-let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj[&#39;name&#39;] = &#39;xxx&#39; //name是字符串 obj[&#39;na&#39; + &#39;me&#39;] = &#39;xxx&#39; let key = &#39;name&#39; obj[key] = &#39;xxx&#39; //使用变量属性时要用中括号的写法  批量赋值 使用Object.assign(obj, {a: 1, b: 2})</description>
+ 如何查看对象的属性   查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
+  查看自身+公有属性（prototype）用console.dir(obj)
+  如何修改或增加对象的属性  直接赋值  let obj = {name: &amp;#39;abc&amp;#39;} obj.name = &amp;#39;xxx&amp;#39; // name是字符串 obj[&amp;#39;name&amp;#39;] = &amp;#39;xxx&amp;#39; //name是字符串 obj[&amp;#39;na&amp;#39; + &amp;#39;me&amp;#39;] = &amp;#39;xxx&amp;#39; let key = &amp;#39;name&amp;#39; obj[key] = &amp;#39;xxx&amp;#39; //使用变量属性时要用中括号的写法 批量赋值 使用Object.assign(obj, {a: 1, b: 2})  </description>
     </item>
     
     <item>
@@ -54,8 +67,8 @@ let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj
  JS语法中大小写是敏感的
 大部分空格没有实际意义
  标识符 第一个字符可以是Unicode字母或$或_或中文接上述字符或数字，例如
- var _ = 1 var $ = 2 var 你好 = &amp;lsquo;hello&amp;rsquo; var $abc123  if&amp;hellip;else if (表达式) { 语句 } else if (表达式) { 语句 } else { 语句 }   {}在语句只有一句的时候可以省略，但是不建议这样做，使用最没有歧义的写法是程序员的戒律
- while for 循环语句 while while (表达式) { 语句 }   判断表达式的真假 当表达式为真时执行语句，执行完再判断表示式真假 表达式为假跳出循环执行后面的语句  for for (语句1;表达式2;语句3) { 循环体 }   执行语句1 判断表达式2 如果为真，执行循环体，然后执行语句3 如果为假，直接跳出循环，执行后面的的语句  break continue 放在循环体中，break退出所有循环，continue退出当前一次循环</description>
+ var _ = 1 var $ = 2 var 你好 = &amp;lsquo;hello&amp;rsquo; var $abc123  if&amp;hellip;else if (表达式) { 语句 } else if (表达式) { 语句 } else { 语句 }  {}在语句只有一句的时候可以省略，但是不建议这样做，使用最没有歧义的写法是程序员的戒律
+ while for 循环语句 while while (表达式) { 语句 }  判断表达式的真假 当表达式为真时执行语句，执行完再判断表示式真假 表达式为假跳出循环执行后面的语句  for for (语句1;表达式2;语句3) { 循环体 }  执行语句1 判断表达式2 如果为真，执行循环体，然后执行语句3 如果为假，直接跳出循环，执行后面的的语句  break continue 放在循环体中，break退出所有循环，continue退出当前一次循环</description>
     </item>
     
     <item>
@@ -67,7 +80,7 @@ let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj
       <description>JavaScript是布兰登·艾奇(Brendan Eich)于1995年在网景公司的要求下开发的。
 起初，他对开发JavaScript没有什么兴趣，只是为了完成任务花了十天就完成了。
 他的设计思路主要是:
- 借鉴了C语言基本语法 借鉴Java语言的数据类型和内存管理 借鉴Scheme语言，将函数提升到&amp;rdquo;第一等公民&amp;rdquo;(first class)的地位 借鉴Self语言，使用基于原型(prototype)的继承机制  所以JavaScript说好听是集大成，说不好听其实是东拼西凑的语言。而其本人也并不喜欢自己的这个作品。
+ 借鉴了C语言基本语法 借鉴Java语言的数据类型和内存管理 借鉴Scheme语言，将函数提升到&amp;quot;第一等公民&amp;rdquo;(first class)的地位 借鉴Self语言，使用基于原型(prototype)的继承机制  所以JavaScript说好听是集大成，说不好听其实是东拼西凑的语言。而其本人也并不喜欢自己的这个作品。
 后来由于种种原因，JavaScript成了浏览器的统一脚本语言，并且业界制定了ECMAScript标准。
 到今天由于chrome有大一统pc端浏览器的趋势，同时移动端市场的快速发展，加上ECMAScript新标准的发布，
 前端这个岗位需求量越来越大，造就了现在JavaScript很火。
@@ -80,14 +93,14 @@ let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj
       <pubDate>Tue, 29 Oct 2019 14:22:02 +0800</pubDate>
       
       <guid>http://example.org/posts/url/</guid>
-      <description> 完整的URL包括以下内容
+      <description>完整的URL包括以下内容
 协议 + 域名或IP + 端口号 + 路径 + 查询字符串 + 锚点
 例如:https://www.baidu.com/s?wd=hello&amp;amp;rsv_spt=1#5
 协议(protocol) 协议一般指网络数据交换规则，诸如HTTP(超文本传输协议)，FTP(文件传输协议)等
 IP(Internet Protocol) 简单来说IP主要约定了两件事1:如何定位一台设备。2:如何封装数据报文并与其他设备交流
  几个特殊的ip:127.0.0.1表示自己，localhost通过hosts指定为自己，0.0.0.0不表示任何设备
- 端口号(port) IP可以定位一台机器，而一台机器可以通过端口号提供不同的服务，如 - HTTP服务一般是80 - HTTPS服务一般是443 - FTP服务一般是21 - 一共有65535个端口
-路径 由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。
+ 端口号(port) IP可以定位一台机器，而一台机器可以通过端口号提供不同的服务，如
+ HTTP服务一般是80 HTTPS服务一般是443 FTP服务一般是21 一共有65535个端口  路径 由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。
 查询字符串 可选，用于给动态网页传递参数，多个参数用&amp;amp;隔开
 锚点 可以定位到网页的某个地方
 域名 域名通过DNS(域名系统)解析到公网地址，也就是域名其实就是IP的别称。
@@ -105,9 +118,9 @@ IP(Internet Protocol) 简单来说IP主要约定了两件事1:如何定位一台
       
       <guid>http://example.org/posts/css-animation/</guid>
       <description>浏览器渲染过程 在说CSS动画之前我们先来看下浏览器的简单渲染过程
- 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示 1. 整个渲染过程要重新走一遍，如div.remove() 2. 跳过layout过程，一般是修改颜色的操作。 3. 跳过layout和paint过程，比如我们要提到的css动画中改变transform
- 每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
- CSS动画 介绍CSS动画前先介绍transform
+ 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示
+ 整个渲染过程要重新走一遍，如div.remove() 跳过layout过程，一般是修改颜色的操作。 跳过layout和paint过程，比如我们要提到的css动画中改变transform   每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
+  CSS动画 介绍CSS动画前先介绍transform
 主要的作用是允许我们对元素进行旋转、缩放、移动或倾斜
 transform 有四个常用功能
  位移translate 缩放scale 旋转rotate 倾斜skew  具体用法查看transform MDN
@@ -118,7 +131,7 @@ transition(过渡) 作用主要是补充中间帧，用法是transition:属性�
  不是所有属性都能过渡的，如display从block到none是没有过渡效果的。
  下面是用transform + transition制作的红心动画hover效果
 animation + keyframes keyframes主要两种写法
-@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } }  @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } }  具体用法查看@keyframes MDN</description>
+@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } } @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } } 具体用法查看@keyframes MDN</description>
     </item>
     
     <item>
@@ -127,12 +140,8 @@ animation + keyframes keyframes主要两种写法
       <pubDate>Wed, 23 Oct 2019 17:06:01 +0800</pubDate>
       
       <guid>http://example.org/posts/html-tag/</guid>
-      <description>&amp;lt;a&amp;gt; 作用  跳转外部页面 跳转内部锚点 跳转到邮箱或者电话  属性 href取值  表示http路径/a/b/c(根目录是http服务的目录) 以及 a/b/c
- 锚点 # 跳到顶部 #id 跳到对应id的标签
- 伪协议 javascript:; 用处：解决点击页面不刷新不变化的需求
- 邮箱 mailto:test@gmail.com 电话 tel:13111111111  target取值  _blank 新页面打开 _top iframe打开顶部 _self 本页打开 _parent iframe上一层打开 xxx 打开一个xxx的页面(window.name = xxx)，打开iframe name为xxx的页面  download 作用：不是打开页面，而是下载页面
-问题：不是所有浏览器支持，手机浏览器支持程度最差
-&amp;lt;table&amp;gt; 相关的标签  &amp;lt;thead&amp;gt; &amp;lt;tbody&amp;gt; &amp;lt;tfoot&amp;gt; &amp;lt;tr&amp;gt;(table row) &amp;lt;td&amp;gt;(table data) &amp;lt;th&amp;gt;(table head)  相关的样式  table-layout设置表格布局算法 auto 浏览器自动 fixed 等宽 border-spacing表格边框间隙 border-collapse collapse合并表格边框  &amp;lt;img&amp;gt; 作用 发出get请求，展示一张图片</description>
+      <description>&amp;lt;a&amp;gt;  作用  跳转外部页面 跳转内部锚点 跳转到邮箱或者电话  属性 href取值  表示http路径/a/b/c(根目录是http服务的目录) 以及 a/b/c 锚点 # 跳到顶部 #id 跳到对应id的标签 伪协议   javascript:; 用处：解决点击页面不刷新不变化的需求 邮箱 mailto:test@gmail.com 电话 tel:13111111111  target取值  _blank 新页面打开 _top iframe打开顶部 _self 本页打开 _parent iframe上一层打开 xxx 打开一个xxx的页面(window.name = xxx)，打开iframe name为xxx的页面  download 作用：不是打开页面，而是下载页面问题：不是所有浏览器支持，手机浏览器支持程度最差
+&amp;lt;table&amp;gt;  相关的标签  &amp;lt;thead&amp;gt; &amp;lt;tbody&amp;gt; &amp;lt;tfoot&amp;gt; &amp;lt;tr&amp;gt;(table row) &amp;lt;td&amp;gt;(table data) &amp;lt;th&amp;gt;(table head)  相关的样式  table-layout设置表格布局算法 auto 浏览器自动 fixed 等宽 border-spacing表格边框间隙 border-collapse collapse合并表格边框  &amp;lt;img&amp;gt;  作用 发出get请求，展示一张图片</description>
     </item>
     
     <item>
@@ -142,14 +151,14 @@ animation + keyframes keyframes主要两种写法
       
       <guid>http://example.org/posts/html-first/</guid>
       <description>历史  HTML的英文全称是 Hypertext Marked Language，即超文本标记语言。HTML是由Web的发明者 Tim Berners-Lee(李爵士)和同事 Daniel W. Connolly于1990年创立的一种标记语言——百度百科
- HTML起手式 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;zh-CN&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0&amp;quot; /&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatiable&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;我的网页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  常用的表示章节的标签  h1~h6 表示标题，h1字体最大，依次减少
- section 表示章节
- article 表示文章
- header 放在顶部的结构，比如顶部广告
- footer 放在底部的结构，比如版权声明
- main 主要内容
- aside 旁支内容
-  示例 &amp;lt;header&amp;gt;顶部广告&amp;lt;/header&amp;gt; &amp;lt;div&amp;gt; &amp;lt;main&amp;gt; &amp;lt;h1&amp;gt;文章标题&amp;lt;/h1&amp;gt; &amp;lt;section&amp;gt; &amp;lt;h2&amp;gt;第一章&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;内容&amp;lt;/p&amp;gt; &amp;lt;setion&amp;gt; &amp;lt;h3&amp;gt;1.1节&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt;一段话&amp;lt;/p&amp;gt; &amp;lt;/setion&amp;gt; &amp;lt;setion&amp;gt; &amp;lt;h3&amp;gt;1.</description>
+ HTML起手式 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;zh-CN&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width,initial-scale=1.0&amp;#34; /&amp;gt; &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatiable&amp;#34; content=&amp;#34;ie=edge&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;我的网页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 常用的表示章节的标签   h1~h6 表示标题，h1字体最大，依次减少
+  section 表示章节
+  article 表示文章
+  header 放在顶部的结构，比如顶部广告
+  footer 放在底部的结构，比如版权声明
+  main 主要内容
+  aside 旁支内容
+  示例 &amp;lt;header&amp;gt;顶部广告&amp;lt;/header&amp;gt; &amp;lt;div&amp;gt; &amp;lt;main&amp;gt; &amp;lt;h1&amp;gt;文章标题&amp;lt;/h1&amp;gt; &amp;lt;section&amp;gt; &amp;lt;h2&amp;gt;第一章&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;内容&amp;lt;/p&amp;gt; &amp;lt;setion&amp;gt; &amp;lt;h3&amp;gt;1.</description>
     </item>
     
     <item>

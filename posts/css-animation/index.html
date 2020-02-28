@@ -6,7 +6,7 @@
     
     <title>从入门到秃头  | CSS动画</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="generator" content="Hugo 0.65.3" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -27,9 +27,9 @@
 
     <meta property="og:title" content="CSS动画" />
 <meta property="og:description" content="浏览器渲染过程 在说CSS动画之前我们先来看下浏览器的简单渲染过程
- 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示 1. 整个渲染过程要重新走一遍，如div.remove() 2. 跳过layout过程，一般是修改颜色的操作。 3. 跳过layout和paint过程，比如我们要提到的css动画中改变transform
- 每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
- CSS动画 介绍CSS动画前先介绍transform
+ 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示
+ 整个渲染过程要重新走一遍，如div.remove() 跳过layout过程，一般是修改颜色的操作。 跳过layout和paint过程，比如我们要提到的css动画中改变transform   每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
+  CSS动画 介绍CSS动画前先介绍transform
 主要的作用是允许我们对元素进行旋转、缩放、移动或倾斜
 transform 有四个常用功能
  位移translate 缩放scale 旋转rotate 倾斜skew  具体用法查看transform MDN
@@ -40,16 +40,16 @@ transition(过渡) 作用主要是补充中间帧，用法是transition:属性�
  不是所有属性都能过渡的，如display从block到none是没有过渡效果的。
  下面是用transform &#43; transition制作的红心动画hover效果
 animation &#43; keyframes keyframes主要两种写法
-@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } }  @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } }  具体用法查看@keyframes MDN" />
+@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } } @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } } 具体用法查看@keyframes MDN" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/css-animation/" />
 <meta property="article:published_time" content="2019-10-28T17:47:02+08:00" />
 <meta property="article:modified_time" content="2019-10-28T17:47:02+08:00" />
 <meta itemprop="name" content="CSS动画">
 <meta itemprop="description" content="浏览器渲染过程 在说CSS动画之前我们先来看下浏览器的简单渲染过程
- 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示 1. 整个渲染过程要重新走一遍，如div.remove() 2. 跳过layout过程，一般是修改颜色的操作。 3. 跳过layout和paint过程，比如我们要提到的css动画中改变transform
- 每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
- CSS动画 介绍CSS动画前先介绍transform
+ 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示
+ 整个渲染过程要重新走一遍，如div.remove() 跳过layout过程，一般是修改颜色的操作。 跳过layout和paint过程，比如我们要提到的css动画中改变transform   每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
+  CSS动画 介绍CSS动画前先介绍transform
 主要的作用是允许我们对元素进行旋转、缩放、移动或倾斜
 transform 有四个常用功能
  位移translate 缩放scale 旋转rotate 倾斜skew  具体用法查看transform MDN
@@ -60,22 +60,19 @@ transition(过渡) 作用主要是补充中间帧，用法是transition:属性�
  不是所有属性都能过渡的，如display从block到none是没有过渡效果的。
  下面是用transform &#43; transition制作的红心动画hover效果
 animation &#43; keyframes keyframes主要两种写法
-@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } }  @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } }  具体用法查看@keyframes MDN">
-
-
+@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } } @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } } 具体用法查看@keyframes MDN">
 <meta itemprop="datePublished" content="2019-10-28T17:47:02&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-28T17:47:02&#43;08:00" />
-<meta itemprop="wordCount" content="99">
+<meta itemprop="wordCount" content="96">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CSS动画"/>
 <meta name="twitter:description" content="浏览器渲染过程 在说CSS动画之前我们先来看下浏览器的简单渲染过程
- 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示 1. 整个渲染过程要重新走一遍，如div.remove() 2. 跳过layout过程，一般是修改颜色的操作。 3. 跳过layout和paint过程，比如我们要提到的css动画中改变transform
- 每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
- CSS动画 介绍CSS动画前先介绍transform
+ 根据HTML构建HTML树(DOM) 根据CSS构建CSS树(CSSOM) 两棵树合并成Render Tree  然后进行Layout布局(文档流、盒模型、计算大小与位置) Paint绘制(边框颜色、文字颜色、阴影等) Composite合成(根据层叠关系展示画面)  JS更新样式 一般来说我们用JS来更新样式，有三种更新方式 如图所示
+ 整个渲染过程要重新走一遍，如div.remove() 跳过layout过程，一般是修改颜色的操作。 跳过layout和paint过程，比如我们要提到的css动画中改变transform   每个属性的修改触发的流程都不一样，具体可以查看Css Triggers
+  CSS动画 介绍CSS动画前先介绍transform
 主要的作用是允许我们对元素进行旋转、缩放、移动或倾斜
 transform 有四个常用功能
  位移translate 缩放scale 旋转rotate 倾斜skew  具体用法查看transform MDN
@@ -86,7 +83,7 @@ transition(过渡) 作用主要是补充中间帧，用法是transition:属性�
  不是所有属性都能过渡的，如display从block到none是没有过渡效果的。
  下面是用transform &#43; transition制作的红心动画hover效果
 animation &#43; keyframes keyframes主要两种写法
-@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } }  @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } }  具体用法查看@keyframes MDN"/>
+@keyframes animationName { from { transform: translateX(0%); } to { transform: translateX(100%); } } @keyframes animationName { 0% { transform: translateX(0%); } 50% { transform: translateX(50%); } 100% { transform: translateX(100%); } } 具体用法查看@keyframes MDN"/>
 
   </head>
 
@@ -145,115 +142,85 @@ animation &#43; keyframes keyframes主要两种写法
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<h3 id="浏览器渲染过程">浏览器渲染过程</h3>
-
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id="浏览器渲染过程">浏览器渲染过程</h3>
 <p>在说CSS动画之前我们先来看下浏览器的简单渲染过程</p>
-
 <ol>
 <li>根据HTML构建HTML树(DOM)</li>
 <li>根据CSS构建CSS树(CSSOM)</li>
 <li>两棵树合并成Render Tree
-<img src="/images/css-animation/render-tree.jpg" alt="render tree" /></li>
+<img src="/images/css-animation/render-tree.jpg" alt="render tree"></li>
 <li>然后进行Layout布局(文档流、盒模型、计算大小与位置)</li>
 <li>Paint绘制(边框颜色、文字颜色、阴影等)</li>
 <li>Composite合成(根据层叠关系展示画面)</li>
 </ol>
-
 <h3 id="js更新样式">JS更新样式</h3>
-
 <p>一般来说我们用JS来更新样式，有三种更新方式
-<img src="/images/css-animation/update-styles.jpg" alt="render tree" />
-如图所示
-1. 整个渲染过程要重新走一遍，如<code>div.remove()</code>
-2. 跳过layout过程，一般是修改颜色的操作。
-3. 跳过layout和paint过程，比如我们要提到的css动画中改变transform</p>
-
+<img src="/images/css-animation/update-styles.jpg" alt="render tree">
+如图所示</p>
+<ol>
+<li>整个渲染过程要重新走一遍，如<code>div.remove()</code></li>
+<li>跳过layout过程，一般是修改颜色的操作。</li>
+<li>跳过layout和paint过程，比如我们要提到的css动画中改变transform</li>
+</ol>
 <blockquote>
 <p>每个属性的修改触发的流程都不一样，具体可以查看<a href="https://csstriggers.com/">Css Triggers</a></p>
 </blockquote>
-
-<hr />
-
+<hr>
 <h3 id="css动画">CSS动画</h3>
-
 <p>介绍CSS动画前先介绍transform</p>
-
 <p>主要的作用是允许我们对元素进行旋转、缩放、移动或倾斜</p>
-
 <p>transform 有四个常用功能</p>
-
 <ol>
 <li>位移translate</li>
 <li>缩放scale</li>
 <li>旋转rotate</li>
 <li>倾斜skew</li>
 </ol>
-
 <p>具体用法查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform">transform MDN</a></p>
-
 <blockquote>
 <p>需要注意的是inline元素不支持transform，所以我们需要先将元素变成block元素</p>
 </blockquote>
-
 <p>一般CSS动画中有两种做法</p>
-
-<h3 id="transition-过渡">transition(过渡)</h3>
-
+<h3 id="transition过渡">transition(过渡)</h3>
 <p>作用主要是补充中间帧，用法是transition:属性名 时长 过渡方式 延迟</p>
-
 <ul>
 <li>属性名指规定设置过渡效果的css属性名称，如width，height(值为none时，没有属性会获得过渡效果，值为all时，所有属性都将获得过渡效果，多个属性用逗号隔开)</li>
 <li>时长指过渡完所需要的时间，如.5s，200ms</li>
 <li>过渡方式指类似动画效果，如linear线性过渡</li>
 <li>延迟指多少秒后触发动画，如.5s，200ms</li>
 </ul>
-
 <p>具体用法查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform">transition MDN</a></p>
-
 <blockquote>
 <p>不是所有属性都能过渡的，如display从block到none是没有过渡效果的。</p>
 </blockquote>
-
 <p>下面是用transform + transition制作的<a href="http://baldjs.top/future/css/heartbeat/transition.html">红心动画hover效果</a></p>
-
-<h3 id="animation-keyframes">animation + keyframes</h3>
-
+<h3 id="animation--keyframes">animation + keyframes</h3>
 <p>keyframes主要两种写法</p>
-
-<pre><code class="language-css">@keyframes animationName {
-    from {
-        transform: translateX(0%);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">animationName</span> {
+    <span style="color:#f92672">from</span> {
+        <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>);
     }
 
-    to {
-            transform: translateX(100%);
-    }
-}
-</code></pre>
-
-<pre><code class="language-css">@keyframes animationName {
-    0% {
-        transform: translateX(0%);
-    }
-
-    50% {
-        transform: translateX(50%);
-    }
-
-    100% {
-            transform: translateX(100%);
+    <span style="color:#f92672">to</span> {
+            <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
     }
 }
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">animationName</span> {
+    <span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
+        <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>);
+    }
 
-<p>具体用法查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes">@keyframes MDN</a></p>
+    <span style="color:#f92672">50</span><span style="color:#f92672">%</span> {
+        <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>);
+    }
 
+    <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+            <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+    }
+}
+</code></pre></div><p>具体用法查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes">@keyframes MDN</a></p>
 <p>animation语法：</p>
-
 <p>animation:动画名(@keyframes中定义)|过渡方式|延迟|次数|方向|填充模式|是否暂停</p>
-
 <ul>
 <li>过渡方式，延迟同transition</li>
 <li>次数指动画的循环次数(infinite无限循环)</li>
@@ -261,9 +228,7 @@ animation &#43; keyframes keyframes主要两种写法
 <li>填充模式none|forwards(在终点停止)</li>
 <li>是否暂停paused|running</li>
 </ul>
-
 <p>具体用法查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation">animation MDN</a></p>
-
 <p>下面是用@keyframes + animation制作的<a href="http://baldjs.top/future/css/heartbeat/animation.html">红心动画效果</a></p>
 <ul class="pa0">
   
@@ -287,7 +252,7 @@ animation &#43; keyframes keyframes主要两种写法
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
-    &copy; 2019 从入门到秃头
+    &copy; 2020 从入门到秃头
   </a>
     <div>
 
