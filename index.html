@@ -32,7 +32,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/" />
-<meta property="og:updated_time" content="2020-02-28T20:39:52+08:00" />
+<meta property="og:updated_time" content="2020-03-13T10:14:38+08:00" />
 <meta itemprop="name" content="从入门到秃头">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="从入门到秃头"/>
@@ -117,6 +117,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/mvc/" class="color-inherit dim link">
+            浅析Mvc
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          MVC是一种组织代码的形式，将数据相关放在Model中， 将视图相关放入View中，将操作和连接M和V放入Controller中。 比如在编写后端时，一般将数据库的表映射和主键等相关信息放在Model中， 然后View层放入前端模板文件，Controller梳理数据逻辑然后发送到View层。 一般来说这种编写代码方式在讲前后端分离的现在已经没多少人用了。
+而前端处理数据又越来越多，所以我们现在可以将MVC的理念放在前端中。
+MVC三个对象 我们可以将MVC抽象成三个对象
+const model = { create() {}, delete() {}, update() {}, get() {} } const view = { el: &#39;指定标签&#39;, render() {} } const controller = { init() {} //可以在这做初始化和绑定事件等动作 } 主要的逻辑是数据发生变化时render()重新渲染视图 主要的问题是如何监听数据变化，我们可以用到一种EventBus的概念
+import $ from &#39;jquery&#39; const eventBus = $({}) 因为jquery对象同时拥有监听和触发事件的方法，我们可以这样 在Model中触发自定义事件
+model.udpate() { //修改数据后  eventBus.trigger(&#39;changeData&#39;) } 我们就可以在Controller中监听到
+controller.init() { eventBus.on(&#39;changeData&#39;, () =&gt; { view.render() }) } 表驱动编程 我们可以将数组、对象、Map等作为表进行查询等操作省去了switch或者无数个ifelse的操作 比如
+function getChineseWeekByDate(date) { const numWeekDay = date.
+        </div>
+          <a href="/posts/mvc/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/jquery/" class="color-inherit dim link">
             jQuery对象基本用法
             </a>
@@ -170,42 +201,18 @@ let i = 0 for(i = 0; i&lt;6; i++){ (function(i) { setTimeout(()=&gt;{ console.lo
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/js-object/" class="color-inherit dim link">
-            JS 对象基本用法
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          声明对象的两种用法 1.简写写法
-let obj = {a: 1} 2.正式写法
-let obj = new Object({a: 1}) 如何删除对象的属性 delete obj.xxx delete obj[&#39;xxx&#39;]  将属性值设为undefined并不等同于删除属性
-用xxx in obj来判断obj是否含xxx属性，包括原形属性 也可以用obj.hasOwnProperty来判断，只判断非原型属性
- 如何查看对象的属性   查看自身所有的属性用Object.keys(obj)，它将返回对象自身属性名的数组
-  查看自身+公有属性（prototype）用console.dir(obj)
-  如何修改或增加对象的属性  直接赋值  let obj = {name: &#39;abc&#39;} obj.name = &#39;xxx&#39; // name是字符串 obj[&#39;name&#39;] = &#39;xxx&#39; //name是字符串 obj[&#39;na&#39; + &#39;me&#39;] = &#39;xxx&#39; let key = &#39;name&#39; obj[key] = &#39;xxx&#39; //使用变量属性时要用中括号的写法 批量赋值 使用Object.assign(obj, {a: 1, b: 2})  
-        </div>
-          <a href="/posts/js-object/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/js-object/" class="link black dim">
+              JS 对象基本用法
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js-syntax/" class="link black dim">
@@ -222,12 +229,6 @@ let obj = new Object({a: 1}) 如何删除对象的属性 delete obj.xxx delete o
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/url/" class="link black dim">
               浅析URL
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/css-animation/" class="link black dim">
-              CSS动画
             </a>
           </h2>
         

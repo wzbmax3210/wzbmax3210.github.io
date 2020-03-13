@@ -6,10 +6,26 @@
     <description>Recent content in Posts on 从入门到秃头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 28 Feb 2020 20:39:52 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 10:14:38 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅析Mvc</title>
+      <link>http://example.org/posts/mvc/</link>
+      <pubDate>Fri, 13 Mar 2020 10:14:38 +0800</pubDate>
+      
+      <guid>http://example.org/posts/mvc/</guid>
+      <description>MVC是一种组织代码的形式，将数据相关放在Model中， 将视图相关放入View中，将操作和连接M和V放入Controller中。 比如在编写后端时，一般将数据库的表映射和主键等相关信息放在Model中， 然后View层放入前端模板文件，Controller梳理数据逻辑然后发送到View层。 一般来说这种编写代码方式在讲前后端分离的现在已经没多少人用了。
+而前端处理数据又越来越多，所以我们现在可以将MVC的理念放在前端中。
+MVC三个对象 我们可以将MVC抽象成三个对象
+const model = { create() {}, delete() {}, update() {}, get() {} } const view = { el: &amp;#39;指定标签&amp;#39;, render() {} } const controller = { init() {} //可以在这做初始化和绑定事件等动作 } 主要的逻辑是数据发生变化时render()重新渲染视图 主要的问题是如何监听数据变化，我们可以用到一种EventBus的概念
+import $ from &amp;#39;jquery&amp;#39; const eventBus = $({}) 因为jquery对象同时拥有监听和触发事件的方法，我们可以这样 在Model中触发自定义事件
+model.udpate() { //修改数据后  eventBus.trigger(&amp;#39;changeData&amp;#39;) } 我们就可以在Controller中监听到
+controller.init() { eventBus.on(&amp;#39;changeData&amp;#39;, () =&amp;gt; { view.render() }) } 表驱动编程 我们可以将数组、对象、Map等作为表进行查询等操作省去了switch或者无数个ifelse的操作 比如
+function getChineseWeekByDate(date) { const numWeekDay = date.</description>
+    </item>
     
     <item>
       <title>jQuery对象基本用法</title>
