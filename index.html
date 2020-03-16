@@ -32,7 +32,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/" />
-<meta property="og:updated_time" content="2020-03-13T10:14:38+08:00" />
+<meta property="og:updated_time" content="2020-03-16T11:41:08+08:00" />
 <meta itemprop="name" content="从入门到秃头">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="从入门到秃头"/>
@@ -117,6 +117,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/vue-install/" class="color-inherit dim link">
+            Vue的两个版本
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue的两种版本 Vue官方给我们提供了两种版本来使用: vue.js 完整版 vue.runtime.js 运行时版(非完整版)
+vue.js提供了compiler模板的能力，这样可以将vue内置指令 v-if，v-for等和{{}}模板字符串能编译成浏览器所认识的html， 然后插入页面中渲染。
+如：
+// html &lt;div id=&#34;app&#34;&gt;&lt;/div&gt; // main.js new Vue({ el: &#34;#app&#34;, template: ` &lt;div&gt;{{ value }}&lt;/div&gt; `, data: { value: 0 }, }) //最后得到 &lt;div id=&#34;app&#34;&gt;0&lt;/div&gt; 而vue.runtime.js则取消了compiler，体积减少了将近40%. 没有了compiler，vue.runtime.js提供render函数来返回html 如：
+new Vue({ el: &#34;#app&#34;, data: { value: 0 }, // h相当于提供了createElement的功能  render(h) { h(&#39;div&#39;, this.value) } }) 但是在实际开发中我们用webpack的vue-loader将编写的html形式的代码 转换成render函数进行渲染，这样我们就能使用html编写的形式在体积小的运行时版本进行开发
+        </div>
+          <a href="/posts/vue-install/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/mvc/" class="color-inherit dim link">
             浅析Mvc
             </a>
@@ -169,44 +197,18 @@ $(&#39;div&#39;).after($(&#39;p&#39;)) //返回div元素 $(&#39;p&#39;).after($(
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/js-function/" class="color-inherit dim link">
-            JS 函数的执行时机
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }  以上代码的执行结果是什么？
-答案是6个6，而不是直觉上的0,1,2,3,4,5
- 由于JavaScript是单线程，settimeout属异步任务，要在同步任务执行完后才去执行，所以先执行for循环
-而执行完以后i已经变成6，所以在最后执行settimeout时会答应6个6
-在ES6中如果我们写成
-for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 则会打印出0,1,2,3,4,5
-因为在let i = 0初始化写入for循环时，JavaScript会在每次循环时多创建一个临时的i，属于特别处理
-我们还可以写成这样
-let i = 0 for(i = 0; i&lt;6; i++){ (function(i) { setTimeout(()=&gt;{ console.log(i) },0) })(i) } 同样打印0,1,2,3,4,5 这里为每个回调函数构建单独的闭包作用域，这样返回的六个函数都有自己的独立闭包环境
-        </div>
-          <a href="/posts/js-function/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/js-function/" class="link black dim">
+              JS 函数的执行时机
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js-object/" class="link black dim">
@@ -223,12 +225,6 @@ let i = 0 for(i = 0; i&lt;6; i++){ (function(i) { setTimeout(()=&gt;{ console.lo
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js-view/" class="link black dim">
               Js概览
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/url/" class="link black dim">
-              浅析URL
             </a>
           </h2>
         

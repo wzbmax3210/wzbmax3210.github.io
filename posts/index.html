@@ -32,7 +32,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/posts/" />
-<meta property="og:updated_time" content="2020-03-13T10:14:38+08:00" />
+<meta property="og:updated_time" content="2020-03-16T11:41:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -86,6 +86,25 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/vue-install/" class="link black dim">
+        Vue的两个版本
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue的两种版本 Vue官方给我们提供了两种版本来使用: vue.js 完整版 vue.runtime.js 运行时版(非完整版)
+vue.js提供了compiler模板的能力，这样可以将vue内置指令 v-if，v-for等和{{}}模板字符串能编译成浏览器所认识的html， 然后插入页面中渲染。
+如：
+// html &lt;div id=&#34;app&#34;&gt;&lt;/div&gt; // main.js new Vue({ el: &#34;#app&#34;, template: ` &lt;div&gt;{{ value }}&lt;/div&gt; `, data: { value: 0 }, }) //最后得到 &lt;div id=&#34;app&#34;&gt;0&lt;/div&gt; 而vue.runtime.js则取消了compiler，体积减少了将近40%. 没有了compiler，vue.runtime.js提供render函数来返回html 如：
+new Vue({ el: &#34;#app&#34;, data: { value: 0 }, // h相当于提供了createElement的功能  render(h) { h(&#39;div&#39;, this.value) } }) 但是在实际开发中我们用webpack的vue-loader将编写的html形式的代码 转换成render函数进行渲染，这样我们就能使用html编写的形式在体积小的运行时版本进行开发
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -285,29 +304,6 @@ animation + keyframes keyframes主要两种写法
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       &lt;a&gt;  作用  跳转外部页面 跳转内部锚点 跳转到邮箱或者电话  属性 href取值  表示http路径/a/b/c(根目录是http服务的目录) 以及 a/b/c 锚点 # 跳到顶部 #id 跳到对应id的标签 伪协议   javascript:; 用处：解决点击页面不刷新不变化的需求 邮箱 mailto:test@gmail.com 电话 tel:13111111111  target取值  _blank 新页面打开 _top iframe打开顶部 _self 本页打开 _parent iframe上一层打开 xxx 打开一个xxx的页面(window.name = xxx)，打开iframe name为xxx的页面  download 作用：不是打开页面，而是下载页面问题：不是所有浏览器支持，手机浏览器支持程度最差
 &lt;table&gt;  相关的标签  &lt;thead&gt; &lt;tbody&gt; &lt;tfoot&gt; &lt;tr&gt;(table row) &lt;td&gt;(table data) &lt;th&gt;(table head)  相关的样式  table-layout设置表格布局算法 auto 浏览器自动 fixed 等宽 border-spacing表格边框间隙 border-collapse collapse合并表格边框  &lt;img&gt;  作用 发出get请求，展示一张图片
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/html-first/" class="link black dim">
-        HTML入门笔记1
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      历史  HTML的英文全称是 Hypertext Marked Language，即超文本标记语言。HTML是由Web的发明者 Tim Berners-Lee(李爵士)和同事 Daniel W. Connolly于1990年创立的一种标记语言——百度百科
- HTML起手式 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;zh-CN&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34; /&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width,initial-scale=1.0&#34; /&gt; &lt;meta http-equiv=&#34;X-UA-Compatiable&#34; content=&#34;ie=edge&#34; /&gt; &lt;title&gt;我的网页&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;/body&gt; &lt;/html&gt; 常用的表示章节的标签   h1~h6 表示标题，h1字体最大，依次减少
-  section 表示章节
-  article 表示文章
-  header 放在顶部的结构，比如顶部广告
-  footer 放在底部的结构，比如版权声明
-  main 主要内容
-  aside 旁支内容
-  示例 &lt;header&gt;顶部广告&lt;/header&gt; &lt;div&gt; &lt;main&gt; &lt;h1&gt;文章标题&lt;/h1&gt; &lt;section&gt; &lt;h2&gt;第一章&lt;/h2&gt; &lt;p&gt;内容&lt;/p&gt; &lt;setion&gt; &lt;h3&gt;1.
     </div>
   </div>
 </div>

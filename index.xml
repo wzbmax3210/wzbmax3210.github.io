@@ -6,10 +6,23 @@
     <description>Recent content on 从入门到秃头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 13 Mar 2020 10:14:38 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 11:41:08 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue的两个版本</title>
+      <link>http://example.org/posts/vue-install/</link>
+      <pubDate>Mon, 16 Mar 2020 11:41:08 +0800</pubDate>
+      
+      <guid>http://example.org/posts/vue-install/</guid>
+      <description>Vue的两种版本 Vue官方给我们提供了两种版本来使用: vue.js 完整版 vue.runtime.js 运行时版(非完整版)
+vue.js提供了compiler模板的能力，这样可以将vue内置指令 v-if，v-for等和{{}}模板字符串能编译成浏览器所认识的html， 然后插入页面中渲染。
+如：
+// html &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; // main.js new Vue({ el: &amp;#34;#app&amp;#34;, template: ` &amp;lt;div&amp;gt;{{ value }}&amp;lt;/div&amp;gt; `, data: { value: 0 }, }) //最后得到 &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt;0&amp;lt;/div&amp;gt; 而vue.runtime.js则取消了compiler，体积减少了将近40%. 没有了compiler，vue.runtime.js提供render函数来返回html 如：
+new Vue({ el: &amp;#34;#app&amp;#34;, data: { value: 0 }, // h相当于提供了createElement的功能  render(h) { h(&amp;#39;div&amp;#39;, this.value) } }) 但是在实际开发中我们用webpack的vue-loader将编写的html形式的代码 转换成render函数进行渲染，这样我们就能使用html编写的形式在体积小的运行时版本进行开发</description>
+    </item>
     
     <item>
       <title>浅析Mvc</title>
